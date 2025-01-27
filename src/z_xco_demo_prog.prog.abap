@@ -135,17 +135,17 @@ DATA: oref   TYPE REF TO cx_root,
 **    lo_put_operation->execute( ).
 
 * Add the data definition for the CDS view entity to the PUT operation
-DATA(lo_data_definition) = lo_put_operation->for-ddls->add_object( 'Z_XCO_VIEW_ENTITY'
-  )->set_package( lo_package->name
-  )->create_form_specification( ).
-lo_data_definition->set_short_description( 'My generated XCO Demo view entity' ).
-
-DATA(lo_view_entity) = lo_data_definition->add_view_entity( ).
-lo_view_entity->data_source->set_view_entity( 'Z_XCO_DEMOTABLE' ).
-
-DATA(lo_key_field) = lo_view_entity->add_field( xco_cp_ddl=>field( 'Emp_Number' ) ).
-lo_key_field->set_key( )->set_alias( 'EmployeeNumber' ).
-lo_key_field->add_annotation( 'EndUserText.label' )->value->build( )->add_string( 'Employee Number' ).
+**DATA(lo_data_definition) = lo_put_operation->for-ddls->add_object( 'Z_XCO_VIEW_ENTITY'
+**  )->set_package( lo_package->name
+**  )->create_form_specification( ).
+**lo_data_definition->set_short_description( 'My generated XCO Demo view entity' ).
+**
+**DATA(lo_view_entity) = lo_data_definition->add_view_entity( ).
+**lo_view_entity->data_source->set_view_entity( 'Z_XCO_DEMOTABLE' ).
+**
+**DATA(lo_key_field) = lo_view_entity->add_field( xco_cp_ddl=>field( 'Emp_Number' ) ).
+**lo_key_field->set_key( )->set_alias( 'EmployeeNumber' ).
+**lo_key_field->add_annotation( 'EndUserText.label' )->value->build( )->add_string( 'Employee Number' ).
 
 *lo_put_operation->execute( ).
 
